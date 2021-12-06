@@ -1,0 +1,90 @@
+:root {
+  --grey-50: #f7fafc;
+  --grey-100: #edf2f7;
+  --grey-500: #718096;
+  --red: #f56565;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Noto Sans", sans-serif;
+  background-image: linear-gradient(to top left, white 50%, var(--red) 50%);
+}
+
+body.submitted {
+  justify-content: center;
+}
+
+main {
+  width: 100%;
+  margin: 1rem;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  background: var(--grey-50);
+  max-width: 420px;
+}
+main > p {
+  color: var(--grey-500);
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+}
+.form-control > input[type="text"],
+.form-control > input[type="email"],
+.form-control > input[type="password"],
+.form-control > select {
+  outline: 0;
+  border: 0;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--grey-100);
+  color: var(--grey-500);
+}
+.form-control > select {
+  appearance: none;
+}
+
+.error-message {
+  display: none;
+  color: var(--red);
+}
+.error-message.show {
+  display: block;
+}
+
+.agreement {
+  display: flex;
+  margin: 2rem 0;
+}
+.agreement > div {
+  font-size: 1.1rem;
+  margin: 0 0.5rem;
+}
+
+.button-holder {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+.button-holder > a {
+  width: 100%;
+}
+
+.submit-button {
+  cursor: pointer;
+  outline: 0;
+  border: 0;
+  padding: 1rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  background: var(--red);
+  color: white;
+  font-size: 1.1rem;
+}

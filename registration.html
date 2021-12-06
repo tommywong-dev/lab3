@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/4add5699a5.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main>
+    <h2>Join our universe! 🪐</h2>
+    <p>We're an exciting universe to survive together with. With the brilliant engineering mind of yours, you sure we
+      fit
+      well with our problem-solving maniac folks!</p>
+
+    <form novalidate onsubmit="return onSubmit();" method="post" action="registration.php">
+      <div class="form-control has-error">
+        <label for="firstname">First Name</label>
+        <input type="text" id="firstname" name="firstname" required pattern="^[A-Z][a-zA-Z ]+">
+        <span id="firstname_validator" class="error-message">Is that even a name?</span>
+      </div>
+
+      <div class="form-control">
+        <label for="lastname">Last Name</label>
+        <input type="text" id="lastname" name="lastname" required pattern="^[A-Z][a-zA-Z ]+">
+        <span id="lastname_validator" class="error-message">Is that even a name?</span>
+      </div>
+
+      <div class="form-control">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+        <span id="email_validator" class="error-message">Is that even an email?</span>
+      </div>
+      <div class="form-control">
+        <label for="mobile">Mobile</label>
+        <input type="text" id="mobile" name="mobile" required pattern="^(\+?6?01)[0-46-9]-*[0-9]{7,8}$" value="+60">
+        <span id="mobile_validator" class="error-message">Is this mobile number from Malaysia?</span>
+      </div>
+      <div class="form-control">
+        <label for="gender">Gender</label>
+        <span>
+          <input type="radio" name="gender" id="gender" value="male" checked> Male
+          <input type="radio" name="gender" id="gender" value="female"> Female
+        </span>
+      </div>
+      <div class="form-control">
+        <label for="state">State</label>
+        <select name="state" id="state" required>
+          <option value="">Select a state</option>
+          <!-- get options from API   -->
+        </select>
+        <span id="state_validator" class="error-message">Just pick a state!</span>
+      </div>
+      <div class="form-control">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password"
+          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{6,}$" required>
+        <span id="password_validator" class="error-message">You call this a strong password?</span>
+      </div>
+      <div class="form-control">
+        <label for="cpassword">Confirm Password</label>
+        <input type="password" name="cpassword" id="cpassword"
+          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{6,}$" required>
+        <span id="cpassword_validator" class="error-message">Password and Confirm Password not same yet...</span>
+      </div>
+      <div class="agreement">
+        <input type="checkbox" name="agreement" id="agreement" value="true" required>
+        <div>By checking the box, you agree to fly with us to universes we plan to explore!
+          <i class="fa fa-space-shuttle"></i>
+          <span id="agreement_validator" class="error-message">Just agree the terms, you will not regret it!</span>
+        </div>
+      </div>
+      <div class="button-holder">
+        <button type="submit" class="submit-button">Submit</button>
+      </div>
+    </form>
+  </main>
+
+
+  <script src="formValidation.js"></script>
+</body>
+
+</html>
